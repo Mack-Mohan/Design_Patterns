@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const abstractFactory_1 = require("./AbstractFactory/abstractFactory");
+let abstractFactory = new abstractFactory_1.AbstractShapeFactory();
+let smoothShapeFactory = abstractFactory.createShapeFactory("smooth");
+let circle = smoothShapeFactory.createShape("cicle");
+let curve = smoothShapeFactory.createShape("curve");
+console.log(circle.draw());
+console.log(curve.draw());
+let edgedShapeFactory = abstractFactory.createShapeFactory("edged");
+let square = edgedShapeFactory.createShape("square");
+let rectangle = edgedShapeFactory.createShape("rectangle");
+console.log(square.draw());
+console.log(rectangle.draw());
