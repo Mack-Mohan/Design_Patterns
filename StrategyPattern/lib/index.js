@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const normalDuck_1 = require("./duck/normalDuck");
+const woodenDuck_1 = require("./duck/woodenDuck");
+const canNotFly_1 = require("./flyMethods/canNotFly");
+const flyEngine_1 = require("./flyMethods/flyEngine");
+const normalFly_1 = require("./flyMethods/normalFly");
+let noFly = new canNotFly_1.NoFly();
+let engineFly = new flyEngine_1.EngineFly();
+let normalFly = new normalFly_1.NormalFly();
+let normalDuck = new normalDuck_1.NormalDuck(normalFly);
+console.log(normalDuck.fly.fly());
+let woodenDuck = new woodenDuck_1.WoodenDuck(noFly);
+console.log(woodenDuck.fly.fly());
+let woodenDuckWithEngine = new woodenDuck_1.WoodenDuck(engineFly);
+console.log(woodenDuckWithEngine.fly.fly());
